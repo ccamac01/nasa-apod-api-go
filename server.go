@@ -30,6 +30,18 @@ type imageStore struct {
 	store map[imageURL]Image
 }
 
+type user struct {
+	sync.Mutex
+	store map[imageURL]rating
+}
+
+type users struct {
+	sync.Mutex
+	store map[userEmail]user
+}
+
+
+// for JSON marshal/unmarshal
 type Image struct {
 	Date        string `json:"date"`
 	Explanation string `json:"explanation"`
@@ -42,16 +54,6 @@ type Images []struct {
 	Explanation string `json:"explanation"`
 	Title       string `json:"title"`
 	Url         string `json:"url"`
-}
-
-type user struct {
-	sync.Mutex
-	store map[imageURL]rating
-}
-
-type users struct {
-	sync.Mutex
-	store map[userEmail]user
 }
 
 type User struct {
