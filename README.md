@@ -8,7 +8,7 @@ Store this API key as an environment variable `NASA_API_KEY` before starting the
 ## How-to
 `git-clone` this repository\
 `cd` into repo directory\
-run `go run server.go` and the server will start up on `localhost:8080`
+run `go run server.go` and the server will start up on `localhost:8080`\
 For examples on how to send requests, import the full [Postman collection](https://www.getpostman.com/collections/ce61b6ca3b2bd2cca4dd) locally
 
 ## Functionality
