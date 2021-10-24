@@ -22,19 +22,64 @@ For examples on how to send requests, import the full [Postman collection](https
 ## Requirements
 
 This REST API must match a few requirements:
-
-* [x] `POST /user/` creates a new user, returns error if email not included in JSON body 
-* [x] `DELETE /user/` deletes a user, returns error if email not included in JSON body 
 * [x] `GET /image` returns an image (JSON) from NASA's APOD API and stores in the db
-* [x] `GET /rating/{email}` returns all ratings associated with the user email, , returns error if email not included in request params
-* [x] `PUT /rating/` updates the rating associated with the image and user, returns error if email, imageID & rating are not included in JSON body 
-* [x] `POST /rating/` saves the rating for the specified image and user, returns error if email, imageID & rating are not included in JSON body 
-* [x] `DELETE /rating/` deletes the rating associated with the image and user, returns error if email & imageID are not included in JSON body 
+* [x] `POST /user` creates a new user, returns error if email not included in JSON body 
+    * Body request requirements: 
+    ```json
+    {
+        "email": "YOUR_EMAIL@mail.com"
+    }
+    
+    ```
+* [x] `DELETE /user` deletes a user, returns error if email not included in JSON body 
+    * Body request requirements: 
+    ```json
+    {
+        "email": "YOUR_EMAIL@mail.com"
+    }
+    
+    ```
+* [x] `POST /rating` saves the rating for the specified image and user, returns error if email, imageID & rating are not included in JSON body 
+    * Body request requirements: 
+    ```json
+    {
+        "email": "YOUR_EMAIL@mail.com",
+        "imageURL": "https://apod.nasa.gov/apod/image/some_image_number_here/some_image_name_here.jpg",
+        "rating": 5
+    }
+    
+    ```
+* [x] `GET /rating` returns all ratings associated with the user email, returns error if email not included in request params
+    * Body request requirements: 
+    ```json
+    {
+        "email": "YOUR_EMAIL@mail.com"
+    }
+    
+    ```
+* [x] `PUT /rating` updates the rating associated with the image and user, returns error if email, imageID & rating are not included in JSON body 
+    * Body request requirements: 
+    ```json
+    {
+        "email": "YOUR_EMAIL@mail.com",
+        "imageURL": "https://apod.nasa.gov/apod/image/some_image_number_here/some_image_name_here.jpg",
+        "rating": 4
+    }
+    
+    ```
+* [x] `DELETE /rating` deletes the rating associated with the image and user, returns error if email & imageID are not included in JSON body 
+    * Body request requirements: 
+    ```json
+    {
+        "email": "YOUR_EMAIL@mail.com",
+        "imageURL": "https://apod.nasa.gov/apod/image/some_image_number_here/some_image_name_here.jpg"
+    }
+    
+    ```
 
 ### Data Types
 
-These fields must be included as JSON in the body of POST/PUT/DELETE requests OR
-as query parameters in the GET request (where required)\
+These fields must be included as JSON in the body of POST/PUT/DELETE requests (and in the GET request) (where required)\
 `email`: string containing the email associated with a user\
 `imageURL`: string containing the `url` associated with an image (see down below)\
 `rating`: an integer ranging from 1 to 5 (inclusive)\
