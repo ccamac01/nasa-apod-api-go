@@ -30,7 +30,7 @@ This REST API must match a few requirements:
 These fields must be included as JSON in the body of POST/PUT/DELETE requests OR
 as query parameters in the GET request (where required)\
 `email`: string containing the email associated with a user\
-`imageID`: string containing the `url` associated with an image (see down below)\
+`imageURL`: string containing the `url` associated with an image (see down below)\
 `rating`: an integer ranging from 1 to 5 (inclusive)\
 
 An image object should look like this:
