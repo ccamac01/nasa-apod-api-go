@@ -79,7 +79,7 @@ This REST API must match a few requirements:
 
 ### Data Types
 
-These fields must be included as JSON in the body of POST/PUT/DELETE requests (and in the GET request) (where required)\
+These fields must be included as JSON in the body of POST/PUT/DELETE requests (and in the GET request - where required)\
 `email`: string containing the email associated with a user\
 `imageURL`: string containing the `url` associated with an image (see down below)\
 `rating`: an integer ranging from 1 to 5 (inclusive)\
