@@ -9,7 +9,7 @@ Store this API key as an environment variable `NASA_API_KEY` before starting the
 `git-clone` this repository\
 `cd` into repo directory\
 run `go run server.go` and the server will start up on `localhost:8080`
-For examples on how to send requests view the full [Postman collection](https://www.getpostman.com/collections/ce61b6ca3b2bd2cca4dd)
+For examples on how to send requests, import the full [Postman collection](https://www.getpostman.com/collections/ce61b6ca3b2bd2cca4dd) locally
 
 ## Functionality
 * Fetch and save a NASA picture to the database
